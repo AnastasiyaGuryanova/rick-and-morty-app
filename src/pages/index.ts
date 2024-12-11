@@ -7,3 +7,4 @@ export * from './NotFound/NotFound';
 export * from './DetailCard/CharacterCard';
 export * from './DetailCard/LocationCard';
 export * from './DetailCard/EpisodeCard';
+export * from './Login/Login';
