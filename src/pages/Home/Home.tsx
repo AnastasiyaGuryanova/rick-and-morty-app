@@ -1,10 +1,13 @@
 import { FC } from 'react';
+import { AuthStatus } from '../../components';
 import './Home.css';
 
-export const Home: FC = () => {
+const Home: FC = () => {
 	return (
 		<div className="component">
-			<h1>Добро пожаловать в мир Рика и Морти!</h1>
+			<AuthStatus />
 		</div>
 	);
 };
+
+export default Home;

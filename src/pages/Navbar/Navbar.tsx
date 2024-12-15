@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { internalPaths } from '../../constants';
 import './Navbar.css';
 
-export const Navbar: FC = () => {
+const Navbar: FC = () => {
 	return (
 		<nav className="navbar">
 			<NavLink
@@ -33,3 +33,5 @@ export const Navbar: FC = () => {
 		</nav>
 	);
 };
+
+export default Navbar;

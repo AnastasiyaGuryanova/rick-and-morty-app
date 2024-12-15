@@ -1,0 +1,59 @@
+.sort-controls {
+	display: flex;
+	justify-content: right;
+	margin: 10px 0;
+	position: relative;
+}
+
+.sort-controls .sort-icon {
+	background-color: rgba(255, 165, 0, 0.7);
+	border: none;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	font-size: 1rem;
+	color: #191970;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: solid 1px #191970;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sort-controls .sort-icon:hover {
+	background-color: rgba(255, 165, 0, 1);
+	transform: scale(1.1);
+}
+
+.sort-controls .sort-icon:active {
+	transform: scale(0.9);
+}
+
+.tooltip {
+	position: absolute;
+	top: 50%;
+	right: 50px;
+	transform: translateY(-50%);
+	background-color: rgba(255, 165, 0, 0.5);
+	color: #191970;
+	font-weight: 700;
+	font-size: 0.9rem;
+	padding: 5px 10px;
+	border-radius: 4px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	white-space: nowrap;
+	z-index: 10;
+}
+
+.tooltip::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: -10px;
+	transform: translateY(-50%);
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent transparent transparent rgba(255, 165, 0, 0.5);
+}

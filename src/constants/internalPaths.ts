@@ -7,6 +7,7 @@ enum PathKeys {
 	Episodes = 'episodes',
 	EpisodeCard = 'episodeCard',
 	NotFound = 'notFound',
+	Login = 'login',
 }
 
 type InternalPathsType = {
@@ -15,6 +16,7 @@ type InternalPathsType = {
 
 export const internalPaths: InternalPathsType = {
 	[PathKeys.Home]: '/',
+	[PathKeys.Login]: '/login',
 	[PathKeys.Characters]: '/characters',
 	[PathKeys.CharacterCard]: '/characters/:id',
 	[PathKeys.Locations]: '/locations',
