@@ -6,7 +6,7 @@ import { SigninUserType } from '../../types';
 import { internalPaths } from '../../constants';
 import './Login.css';
 
-export const Login: FC = () => {
+const Login: FC = () => {
 	const navigate = useNavigate();
 	const auth = useAuth();
 	const location = useLocation();
@@ -26,3 +26,5 @@ export const Login: FC = () => {
 		</div>
 	);
 };
+
+export default Login;

@@ -4,3 +4,8 @@ export * from './SortControls/SortControls';
 export * from './Input/Input';
 export * from './AuthStatus/AuthStatus';
 export * from './PrivateRoute/PrivateRoute';
+export * from './ErrorBoundary/ErrorBoundary';
+export * from './Loader/Loader';
+export * from './SuspenseWithLoader/SuspenseWithLoader';
+export * from './ErrorComponent/ErrorComponent';
+export * from './DetailCard/DetailCard';

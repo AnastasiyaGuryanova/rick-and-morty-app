@@ -12,10 +12,15 @@ export const useSortedData = <T>({
 	const [sortedData, setSortedData] = useState<T[]>([]);
 
 	const sortOrder = (searchParams.get('sortOrder') as SortOrder) || defaultOrder;
+	const isSortingEnabled = searchParams.has('sortOrder');
 
 	useEffect(() => {
-		setSortedData(sortData(data, sortField, sortOrder));
-	}, [data, sortField, sortOrder]);
+		if (isSortingEnabled) {
+			setSortedData(sortData(data, sortField, sortOrder));
+		} else {
+			setSortedData(data);
+		}
+	}, [data, sortField, sortOrder, isSortingEnabled]);
 
 	const changeSortOrder = (newOrder: SortOrder) => {
 		setSearchParams({ sortOrder: newOrder });

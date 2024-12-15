@@ -40,10 +40,3 @@
 	font-weight: bold;
 	color: #0000cd;
 }
-
-.detail-page.error {
-	font-size: 1.4rem;
-	color: red;
-	text-align: center;
-	margin-top: 20px;
-}

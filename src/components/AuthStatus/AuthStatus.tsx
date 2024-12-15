@@ -1,11 +1,13 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks';
 import { internalPaths } from '../../constants';
+import { Loader } from '../../components';
 
 export const AuthStatus: FC = () => {
 	const auth = useAuth();
 	const navigate = useNavigate();
+	const [isLoading, setIsLoading] = useState(false);
 
 	const handlesSignout = () => {
 		auth.signout(() => {
@@ -14,8 +16,13 @@ export const AuthStatus: FC = () => {
 	};
 
 	const handlesSignin = () => {
+		setIsLoading(true);
 		navigate(internalPaths.login);
 	};
+
+	if (isLoading) {
+		return <Loader />;
+	}
 
 	if (auth.user === null) {
 		return (

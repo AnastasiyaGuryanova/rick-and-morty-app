@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context';
-import { PrivateRoute } from './component';
-import { Navbar } from './pages';
+import { PrivateRoute, ErrorBoundary } from './components';
+import Navbar from './pages/Navbar/Navbar';
 import { routesConfig } from './constants';
 
 export const App: FC = () => {
@@ -10,18 +10,23 @@ export const App: FC = () => {
 		<AuthProvider>
 			<div className="app">
 				<Navbar />
-
-				<Routes>
-					{routesConfig.map(({ path, element, isPrivate }) => (
-						<Route
-							key={path}
-							path={path}
-							element={
-								isPrivate ? <PrivateRoute element={element} /> : element
-							}
-						/>
-					))}
-				</Routes>
+				<ErrorBoundary>
+					<Routes>
+						{routesConfig.map(({ path, element, isPrivate }) => (
+							<Route
+								key={path}
+								path={path}
+								element={
+									isPrivate ? (
+										<PrivateRoute element={element} />
+									) : (
+										element
+									)
+								}
+							/>
+						))}
+					</Routes>
+				</ErrorBoundary>
 			</div>
 		</AuthProvider>
 	);

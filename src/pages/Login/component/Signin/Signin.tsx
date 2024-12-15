@@ -1,7 +1,7 @@
 import { FC, ChangeEvent, FormEvent, useState } from 'react';
 import { IconAt } from '@tabler/icons-react';
 import { SigninProps } from './SigninProps';
-import { Input } from '../../../../component';
+import { Input } from '../../../../components';
 import './Signin.css';
 
 const initialSigninState = {
