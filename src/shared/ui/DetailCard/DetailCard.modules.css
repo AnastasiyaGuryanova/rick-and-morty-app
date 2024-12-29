@@ -1,0 +1,15 @@
+.detail-card {
+	background-color: rgba(255, 255, 0, 0.4) !important;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+	margin: 20px auto;
+	width: 90%;
+	max-width: 500px;
+	text-align: center;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
