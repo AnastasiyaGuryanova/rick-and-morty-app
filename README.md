@@ -32,7 +32,7 @@
 2. Перейдите в папку проекта:
 
     ```bash
-    cd use-fetch-hook
+    cd rick-and-morty-app
     ```
 
 3. Установите зависимости:

@@ -1,13 +1,13 @@
 import { FC } from 'react';
-import { ScrollableList } from '../../components';
-import { CharacterType } from '../../types';
-import { internalPaths, apiPaths } from '../../constants';
+import { internalPaths, apiPaths } from 'shared/constants';
+import { CharacterType } from 'shared/types';
+import { ScrollableList } from 'shared/ui';
 
 const Characters: FC = () => {
 	return (
 		<ScrollableList<CharacterType>
 			apiPath={apiPaths.character}
-			sortField="name"
+			sortField="created"
 			itemPath={internalPaths.characters}
 		/>
 	);

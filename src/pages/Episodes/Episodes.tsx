@@ -1,13 +1,13 @@
 import { FC } from 'react';
-import { ScrollableList } from '../../components';
-import { EpisodeType } from '../../types';
-import { internalPaths, apiPaths } from '../../constants';
+import { ScrollableList } from 'shared/ui';
+import { EpisodeType } from 'shared/types';
+import { internalPaths, apiPaths } from 'shared/constants';
 
 const Episodes: FC = () => {
 	return (
 		<ScrollableList<EpisodeType>
 			apiPath={apiPaths.episode}
-			sortField="air_date"
+			sortField="created"
 			itemPath={internalPaths.episodes}
 		/>
 	);
