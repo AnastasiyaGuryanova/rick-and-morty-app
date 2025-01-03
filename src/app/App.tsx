@@ -4,7 +4,7 @@ import { BackgroundImage, Container, Box } from '@mantine/core';
 import { withProviders } from './providers';
 import { PrivateRoute, routesConfig } from './router';
 import { Navbar } from 'widgets';
-import { ErrorBoundary } from 'shared/ui';
+import { ErrorBoundary, UpdateNotification } from 'shared/ui';
 
 import backgroundImage from 'shared/assets/images/backgroundImage.jpeg';
 
@@ -16,6 +16,7 @@ export const App: FC = () => {
 					style={{ widht: '1200px', minHeight: '100%', margin: '0 auto' }}
 				>
 					<Navbar />
+					<UpdateNotification />
 					<ErrorBoundary>
 						<Routes>
 							{routesConfig.map(({ path, element, isPrivate }) => (
