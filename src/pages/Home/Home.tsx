@@ -1,12 +1,15 @@
 import { FC } from 'react';
 import { Box } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
 import { AuthStatus } from 'features/auth';
 
 const Home: FC = () => {
+	const isSmallScreen = useMediaQuery('(max-width: 768px)');
+
 	return (
 		<Box
 			style={{
-				marginTop: '30px',
+				marginTop: isSmallScreen ? '0' : '30px',
 				padding: '30px 0 50px 0',
 				textAlign: 'center',
 				fontSize: '1.4rem',

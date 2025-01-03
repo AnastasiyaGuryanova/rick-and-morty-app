@@ -1,11 +1,14 @@
 import { FC } from 'react';
 import { Box, TextInput, PasswordInput } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
 import { IconAt } from '@tabler/icons-react';
 import { useForm } from '@mantine/form';
 import { Button } from 'shared/ui';
 import { SigninFormProps } from './SigninForm.types';
 
 export const SigninForm: FC<SigninFormProps> = ({ onSubmit }: SigninFormProps) => {
+	const isSmallScreen = useMediaQuery('(max-width: 768px)');
+
 	const form = useForm({
 		initialValues: {
 			email: '',
@@ -27,7 +30,7 @@ export const SigninForm: FC<SigninFormProps> = ({ onSubmit }: SigninFormProps) =
 			onSubmit={form.onSubmit((values) => onSubmit(values))}
 			noValidate
 			style={{
-				width: '500px',
+				width: isSmallScreen ? '300px' : '500px',
 				display: 'flex',
 				flexDirection: 'column',
 				gap: '1rem',
