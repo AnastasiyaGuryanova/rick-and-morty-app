@@ -6,3 +6,4 @@ export * from './DetailCard';
 export * from './ScrollableList';
 export * from './SortControls';
 export * from './ListItemComponent';
+export * from './UpdateNotification';
