@@ -1,10 +1,26 @@
 import { FC } from 'react';
-import './Home.css';
+import { Box } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
+import { AuthStatus } from 'features/auth';
 
-export const Home: FC = () => {
+const Home: FC = () => {
+	const isSmallScreen = useMediaQuery('(max-width: 768px)');
+
 	return (
-		<div className="component">
-			<h1>Добро пожаловать в мир Рика и Морти!</h1>
-		</div>
+		<Box
+			style={{
+				marginTop: isSmallScreen ? '0' : '30px',
+				padding: '30px 0 50px 0',
+				textAlign: 'center',
+				fontSize: '1.4rem',
+				backgroundColor: 'rgba(255, 255, 0, 0.6)',
+				borderRadius: '8px',
+				color: '#191970',
+			}}
+		>
+			<AuthStatus />
+		</Box>
 	);
 };
+
+export default Home;
