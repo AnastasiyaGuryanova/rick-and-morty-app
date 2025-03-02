@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import './NotFound.css';
 
-export const NotFound: FC = () => {
+const NotFound: FC = () => {
 	return (
 		<div className="not-found">
 			<h2 className="not-found-title">Страница не найдена</h2>
@@ -15,3 +15,5 @@ export const NotFound: FC = () => {
 		</div>
 	);
 };
+
+export default NotFound;
