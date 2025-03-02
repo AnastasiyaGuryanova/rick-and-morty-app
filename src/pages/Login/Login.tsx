@@ -1,29 +1,28 @@
-import { FC } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Signin } from './component';
-import { useAuth } from '../../hooks';
-import { SigninUserType } from '../../types';
-import { internalPaths } from '../../constants';
-import './Login.css';
+import { Box, Title } from '@mantine/core';
+import { SigninUserType } from 'shared/types';
+import { internalPaths } from 'shared/constants';
+import { SigninForm, useAuth } from 'features';
+import './Login.modules.css';
 
-const Login: FC = () => {
+const Login = () => {
 	const navigate = useNavigate();
 	const auth = useAuth();
 	const location = useLocation();
 
 	const from = location.state?.from || internalPaths.home;
 
-	const handleSigninSubmit = (formData: SigninUserType) => {
+	const handleSignin = (formData: SigninUserType) => {
 		auth.signin(formData, () => {
 			navigate(from, { replace: true });
 		});
 	};
 
 	return (
-		<div className="login">
-			<h2 className="login-title">Вход</h2>
-			<Signin onSubmit={handleSigninSubmit} />
-		</div>
+		<Box className="login-box">
+			<Title>Вход</Title>
+			<SigninForm onSubmit={handleSignin} />
+		</Box>
 	);
 };
 
