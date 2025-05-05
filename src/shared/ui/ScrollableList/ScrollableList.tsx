@@ -2,7 +2,7 @@ import { useRef, useCallback, useState } from 'react';
 import { Box, ScrollArea, List } from '@mantine/core';
 import { Loader, SortControls, ListItemComponent, ErrorComponent } from 'shared/ui';
 import { useSortedData, useInfiniteLoader } from 'shared/hooks';
-import { ItemType } from 'shared/types';
+import { ItemType, SortDirection } from 'shared/types';
 import classes from './ScrollableList.module.css';
 
 interface ScrollableListProps<T extends ItemType> {
@@ -50,7 +50,7 @@ export const ScrollableList = <T extends ItemType>({
 	const { sortedData, sortOrder, changeSortOrder } = useSortedData<T>({
 		data: rawData,
 		sortField,
-		defaultOrder: 'DESC',
+		defaultOrder: SortDirection.DESC,
 	});
 
 	return (

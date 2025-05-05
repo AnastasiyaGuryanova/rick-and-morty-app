@@ -2,11 +2,11 @@ import { FC, useState } from 'react';
 import { IconChevronUp, IconChevronDown } from '@tabler/icons-react';
 import { Box, Button, Tooltip } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
-import { SortOrder } from 'shared/types';
+import { SortDirection } from 'shared/types';
 
 export interface SortControlsProps {
-	sortOrder: SortOrder;
-	onSortChange: (order: SortOrder) => void;
+	sortOrder: SortDirection;
+	onSortChange: (order: SortDirection) => void;
 }
 
 export const SortControls: FC<SortControlsProps> = ({ sortOrder, onSortChange }) => {
@@ -14,7 +14,9 @@ export const SortControls: FC<SortControlsProps> = ({ sortOrder, onSortChange })
 	const isSmallScreen = useMediaQuery('(max-width: 768px)');
 
 	const toggleSortOrder = () => {
-		onSortChange(sortOrder === 'ASC' ? 'DESC' : 'ASC');
+		onSortChange(
+			sortOrder === SortDirection.ASC ? SortDirection.DESC : SortDirection.ASC
+		);
 	};
 
 	return (
