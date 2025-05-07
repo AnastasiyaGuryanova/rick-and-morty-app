@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 import { List, Text } from '@mantine/core';
-import { formatDate } from 'shared/helpers';
+import { formatDate, normalizePath } from 'shared/helpers';
 import { ItemType } from 'shared/types';
 import './ListItemComponent.modules.css';
 
@@ -16,7 +16,7 @@ export const ListItemComponent = forwardRef<HTMLDivElement, ListItemProps<ItemTy
 	({ item, path, displayField, additionalField }, ref) => {
 		return (
 			<List.Item ref={ref as React.Ref<HTMLLIElement>} className="cardStyles">
-				<Link to={`${path}/${item.id}`} className="linkStyles">
+				<Link to={normalizePath(path, item.id)} className="linkStyles">
 					<Text>{item[displayField]}</Text>
 					<Text>{formatDate(item[additionalField])}</Text>
 				</Link>
