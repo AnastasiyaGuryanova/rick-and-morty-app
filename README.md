@@ -7,7 +7,6 @@
 -   **React**
 -   **React Router v6**
 -   **TypeScript**
--   **CSS**
 -   **Mantine UI**
 -   **React Suspense и Lazy Loading**
 -   **Error Boundary**
